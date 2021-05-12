@@ -1,0 +1,4280 @@
+- init:
+    run: rm -f assignment2
+    blocker: true
+
+- build:
+    run: gcc -std=c99 -Wall -Werror assignment2.c -o assignment2  # timeout: 2
+    blocker: true
+
+- case1:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 463\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 433\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 409\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 373\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 357\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 327\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 I"
+        - expect: "Points: 277\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 265\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 258\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 208\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 199\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 149\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 99\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 83\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 33\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case2:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 499\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 449\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 399\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 369\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 357\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 329\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 304\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 229\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 202\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 199\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 149\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 123\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 120\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 119\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 87\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 24\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case3:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 261\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 256\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 238\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 208\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 158\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 143\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 118\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 94\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 T"
+        - expect: "Points: 73\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 23\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 23\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case4:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 499\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 483\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 433\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 425\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 421\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 396\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 379\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 373\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 323\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 313\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 268\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 244\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 219\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 189\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 174\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 124\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 122\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 96\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 46\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 46\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case5:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 285\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 270\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 236\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 186\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 158\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 133\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 103\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 53\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 26\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 26\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case6:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 491\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 441\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 391\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 366\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 316\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 266\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 216\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 191\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 164\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 114\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 105\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 96\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 71\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case7:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 69\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 55\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case8:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 265\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 262\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 220\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 204\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 T"
+        - expect: "Points: 183\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 158\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 133\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 123\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 98\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 62\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case9:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 483\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 459\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 409\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 405\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 385\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 T"
+        - expect: "Points: 352\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 336\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 311\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 261\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 211\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 157\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 142\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 92\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 80\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 66\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 41\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 32\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 32\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 29\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case10:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 93\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 43\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 40\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 22\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case11:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 281\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 231\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 213\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 174\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 149\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 124\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 118\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 68\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 54\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 42\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case12:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 287\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 237\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 235\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 197\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 184\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 130\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 105\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 95\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 55\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case13:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 295\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 277\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 217\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 203\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 191\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 166\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 T"
+        - expect: "Points: 145\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 142\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 122\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 72\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 66\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case14:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 487\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 480\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 461\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 436\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 411\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 386\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 336\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 311\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 286\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 260\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 224\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 199\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 196\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 146\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 122\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 107\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 93\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 81\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 78\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 28\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 27\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 27\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case15:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 61\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case16:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 273\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 248\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 198\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 173\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 164\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 155\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 149\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 134\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 98\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 64\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case17:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 299\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 293\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 289\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 265\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 240\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 210\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 170\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 145\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 125\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 124\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 74\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case18:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 83\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 33\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 I"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case19:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 89\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 35\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case20:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 499\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 474\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 426\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 384\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 342\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 291\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 287\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 285\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 259\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 209\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 179\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 170\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 152\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 102\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 52\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case21:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 463\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 413\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 388\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 364\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 314\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 289\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 229\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 226\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 204\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 154\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 148\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 100\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 70\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 33\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 32\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case22:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 67\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 48\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case23:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 497\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 487\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 437\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 387\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 337\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 292\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 267\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 258\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 222\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 172\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 154\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 153\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 129\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 79\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 76\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 26\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 8\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case24:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 285\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 279\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 229\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 179\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 174\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 120\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 102\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 77\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 55\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case25:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 475\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 425\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 393\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 368\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 318\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 312\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 262\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 237\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 215\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 158\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 133\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 113\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 88\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 85\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 60\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 42\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 42\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 28\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case26:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 79\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 49\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 29\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 29\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 29\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case27:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 81\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 56\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case28:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 469\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 451\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 426\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 406\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 356\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 331\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 306\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 279\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 234\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 204\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 176\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 156\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 140\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 90\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 40\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 34\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 34\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 34\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 34\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case29:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 99\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 87\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 67\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 59\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case30:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 289\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 279\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 239\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 214\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 164\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 155\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 128\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 110\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 85\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 60\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 10\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case31:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 471\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 466\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 416\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 374\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 324\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 305\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 255\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 233\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 183\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 176\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 151\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 125\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 75\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 57\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 42\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 28\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case32:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 281\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 266\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 241\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 233\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 199\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 181\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 174\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 168\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 150\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 111\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 105\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 55\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 30\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 T"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case33:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 269\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 235\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 185\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 160\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 154\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 139\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 114\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 89\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 64\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case34:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 299\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 283\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 278\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 221\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 213\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 188\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 179\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 143\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 124\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 73\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 69\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case35:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 295\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 270\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 220\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 215\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 185\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 O"
+        - expect: "Points: 160\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 135\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 110\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 90\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 65\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case36:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 89\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 64\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 14\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case37:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 63\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 37\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 33\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case38:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 271\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 267\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 225\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 199\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 179\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 129\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 104\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 54\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 S"
+        - expect: "Points: 46\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 9\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case39:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 469\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 419\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 410\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 409\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 405\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 391\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 366\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 324\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 279\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 204\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 154\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 104\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 65\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 40\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case40:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 D"
+        - expect: "Points: 261\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 211\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 200\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 175\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 167\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 142\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 100\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 75\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 19\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case41:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 91\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 86\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 36\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 21\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 I"
+        - expect: "Points: 13\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 12\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case42:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 477\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 427\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 377\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 353\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 348\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 298\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 248\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 216\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 204\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 189\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 139\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 98\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 81\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 26\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 S"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case43:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 D"
+        - expect: "Points: 265\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 240\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 236\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 194\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 178\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 154\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 104\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 D"
+        - expect: "Points: 67\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 D"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 18\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 D"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 I"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 O"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case44:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 491\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 T"
+        - expect: "Points: 434\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 414\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 378\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 353\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 328\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 278\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 253\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 241\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 S"
+        - expect: "Points: 232\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 187\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 183\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 158\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 108\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 58\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 54\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 40\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 31\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 6\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case45:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 T"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 O"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 501\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 475\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 437\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 386\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 S"
+        - expect: "Points: 379\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 367\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 S"
+        - expect: "Points: 348\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 D"
+        - expect: "Points: 332\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 282\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 D"
+        - expect: "Points: 252\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 236\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 185\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 165\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 115\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 O"
+        - expect: "Points: 90\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 O"
+        - expect: "Points: 65\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 T"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 D"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 15\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case46:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "501"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 475\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 427\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 I"
+        - expect: "Points: 377\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 I"
+        - expect: "Points: 327\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 321\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 304\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 254\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 240\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 215\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 190\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 174\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 126\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 I"
+        - expect: "Points: 76\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 I"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 51\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 26\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 S"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 I"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "8 I"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 T"
+        - expect: "Points: 11\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case47:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 299\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 S"
+        - expect: "Points: 288\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 238\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 T"
+        - expect: "Points: 223\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 198\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 173\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 123\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 73\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 55\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 I"
+        - expect: "Points: 45\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 S"
+        - expect: "Points: 27\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "19 D"
+        - expect: "Points: 27\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case48:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "301"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 S"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 I"
+        - expect: "Points: 301\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 299\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 D"
+        - expect: "Points: 289\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 O"
+        - expect: "Points: 264\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 214\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 202\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 184\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 170\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 O"
+        - expect: "Points: 145\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "18 T"
+        - expect: "Points: 91\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 O"
+        - expect: "Points: 66\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 I"
+        - expect: "Points: 16\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 T"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 S"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 I"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 O"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "6 D"
+        - expect: "Points: 7\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "5 S"
+        - expect: "Points: 4\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case49:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 T"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 O"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 I"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "12 S"
+        - expect: "Points: 101\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 D"
+        - expect: "Points: 81\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "16 O"
+        - expect: "Points: 56\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "3 T"
+        - expect: "Points: 47\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 T"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 S"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 O"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "11 T"
+        - expect: "Points: 17\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "4 T"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "9 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 D"
+        - expect: "Points: 5\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "2 T"
+        - expect: "Points: 3\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0
+
+- case50:
+    run: ./assignment2
+    points: 1
+    script:
+        - expect: "Target: "  # timeout: 2
+        - send: "101"
+        - expect: "Throw: "                   # timeout: 2
+        - send: "7 D"
+        - expect: "Points: 87\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "17 O"
+        - expect: "Points: 62\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "20 T"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 O"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "10 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "14 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "15 I"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 S"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "13 D"
+        - expect: "Points: 2\r\n"                   # timeout: 2
+        - expect: "Throw: "                   # timeout: 2
+        - send: "1 D"
+        - expect: "Points: 0\r\n"                   # timeout: 2
+    exit: 0

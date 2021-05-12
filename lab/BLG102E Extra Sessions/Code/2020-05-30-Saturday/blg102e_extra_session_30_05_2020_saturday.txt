@@ -1,0 +1,620 @@
+// 30.05.2020 SATURDAY
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+int main()
+{
+	int a[SIZE];
+	double b[SIZE];
+
+	memset(a, 0, sizeof(a));
+	displayArray(a, SIZE);
+
+	memset(b, 0, sizeof(b));
+	displayDoubleArray(b, SIZE);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+
+int main()
+{
+	int a[SIZE];
+	int b[SIZE];
+
+	randomize();
+	setRandomArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	memcpy(b, a, sizeof(a));
+	displayArray(b, SIZE);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+
+int main()
+{
+	unsigned char bytes[SIZE] = {};
+	unsigned char *p;
+	int k;
+
+	randomize();
+
+	for (k = 0; k < 600; k++)
+		bytes[rand() % 100] = 1;
+
+	p = (unsigned char *)memchr(bytes, 0, sizeof(bytes));
+
+	if (p == NULL)
+		printf("There is not any 0 in this memory block.. \n");
+	else {
+		printf("*p = %d \n", *p);
+		printf("The element with %ld index is 0. \n", p - bytes);
+	}
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+void *memchr1(const void *vp, int val, size_t n)
+{
+	char *p = (char *)vp;
+	int k;
+
+	for (k = 0; k < n; k++)
+		if (p[k] == val)
+			return (p + k);
+			// return (&p[k]);
+
+	return NULL;
+}
+
+int main()
+{
+	unsigned char bytes[SIZE] = {};
+	unsigned char *p;
+	int k;
+
+	randomize();
+
+	for (k = 0; k < 600; k++)
+		bytes[rand() % 100] = 1;
+
+	if ((p = (unsigned char *)memchr1(bytes, 0, sizeof(bytes))) == NULL)
+		printf("There is not any 0 in this memory block.. \n");
+	else {
+		printf("*p = %d \n", *p);
+		printf("The element with %ld index is 0. \n", p - bytes);
+	}
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+void *memchr2(const void *vp, int val, size_t n)
+{
+	char *p = (char *)vp;
+
+	while (n--) {
+		if (*p == val)
+			return p;
+		p++;
+	}
+
+	return NULL;
+}
+
+int main()
+{
+	unsigned char bytes[SIZE] = {};
+	unsigned char *p;
+	int k;
+
+	randomize();
+
+	for (k = 0; k < 600; k++)
+		bytes[rand() % 100] = '1';
+
+	if ((p = (unsigned char *)memchr1(bytes, 0, sizeof(bytes))) == NULL)
+		printf("There is not any 0 in this memory block.. \n");
+	else {
+		printf("*p = %d \n", *p);
+		printf("The element with %ld index is 0. \n", p - bytes);
+	}
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 100
+
+
+
+
+int main()
+{
+	int a[SIZE];
+	int b[SIZE];
+
+	randomize();
+	setRandomArray(a, SIZE);
+	memcpy(b, a, sizeof(a));
+
+	if (memcmp(a, b, sizeof(a)) == 0)
+		printf("Two arrays are equal... \n");
+	else
+		printf("Two arrays are NOT equal! \n");
+
+	a[rand() % SIZE]++;
+
+	if (!memcmp(a, b, sizeof(a)))
+		printf("Two arrays are equal... \n");
+	else
+		printf("Two arrays are NOT equal! \n");
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 100
+
+int memcmp1(const void *vp1, const void *vp2, size_t n)
+{
+	unsigned char *p1 = (unsigned char *)vp1;
+	unsigned char *p2 = (unsigned char *)vp2;
+
+	while (n--) {
+		if (*p1 != *p2)
+			return *p1 > *p2 ? 1 : -1;
+		p1++, p2++;
+	}
+
+	return 0;
+}
+
+
+int main()
+{
+	int a[SIZE];
+	int b[SIZE];
+
+	randomize();
+	setRandomArray(a, SIZE);
+	memcpy1(b, a, sizeof(a));
+
+	if (memcmp1(a, b, sizeof(a)) == 0)
+		printf("Two arrays are equal... \n");
+	else
+		printf("Two arrays are NOT equal! \n");
+
+	a[rand() % SIZE]++;
+
+	if (!memcmp1(a, b, sizeof(a)))
+		printf("Two arrays are equal... \n");
+	else
+		printf("Two arrays are NOT equal! \n");
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 10
+
+
+void gReverse(void *vp, size_t size, size_t width)
+{
+	char *p = (char *)vp;
+	size_t k;
+
+	for (k = 0; k < size / 2; k++)
+		gswap(p + k * width, p + (size - 1 - k) * width, width); // p[k] and p[size - 1 - k] reverse
+}
+
+
+int main()
+{
+	int a[SIZE];
+
+	randomize();
+	setRandomArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	gReverse(a, SIZE, sizeof(int));
+
+	displayArray(a, SIZE);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 10
+
+
+
+void *gSearch(const void *vpArray, size_t size, size_t width, const void *vpval)
+{
+	char *p = (char *)vpArray;
+	size_t k;
+
+	for (k = 0; k < size; k++)
+		if (memcmp1(p + k * width, vpval, width) == 0)
+			return p + k * width;
+
+	return NULL; // (void *) 0
+}
+
+int main()
+{
+	int a[SIZE];
+	int sval;
+	int *ptr;
+
+	randomize();
+	setRandomArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	printf("Enter a value to search: ");
+	scanf("%d", &sval);
+
+	ptr = (int *)gSearch(a, SIZE, sizeof(int), &sval);
+
+	if (ptr == NULL) // !ptr
+		printf("not found! \n");
+	else
+		printf("found! the index of the element is %ld \n", ptr - a);
+
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 7
+
+void swapStr(char *p1, char *p2)
+{
+	char temp[40];
+
+	strcpy(temp, p1);
+	strcpy(p1, p2);
+	strcpy(p2, temp);
+}
+
+
+
+int main()
+{
+	char names[SIZE][40] = {
+			"necati",  // names[0] = "necati";   names[0] = address of (char *)
+			"kaan",     // names[1][0] = 'k';
+			"nese",
+			"roger",
+			"david",
+			"nick",
+			"richard"
+	};
+
+	int i, k;
+
+	// display names
+	for (k = 0; k < SIZE; k++)
+		printf("%s ", names[k]);
+
+	printf("\n");
+
+
+	// sort names
+	for (i = 0; i < SIZE - 1; i++)
+		for (k = 0; k < SIZE - 1 - i; k++)
+			if (strcmp1(names[k], names[k + 1]) > 0)
+				swapStr(names[k], names[k + 1]);
+
+	// display names
+	for (k = 0; k < SIZE; k++)
+		printf("%s ", names[k]);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 7
+
+void swapStr(char *p1, char *p2)
+{
+	char temp[40];
+
+	strcpy(temp, p1);
+	strcpy(p1, p2);
+	strcpy(p2, temp);
+}
+
+int main()
+{
+	char names[SIZE][40] = {
+			"necati",  // names[0] = "necati";   names[0] = address of (char *)
+			"kaan",     // names[1][0] = 'k';
+			"nese",
+			"roger",
+			"richard",
+			"nick",
+			"david"
+	};
+
+	int i, k;
+
+	// display names
+	for (k = 0; k < SIZE; k++)
+		printf("%s ", names[k]);
+
+	printf("\n");
+
+	// sort names by the last letter of the names
+	for (i = 0; i < SIZE - 1; i++)
+		for (k = 0; k < SIZE - 1 - i; k++)
+			if (strcmp1(names[k] + (strlen(names[k]) - 1), names[k + 1] + (strlen(names[k + 1]) - 1)) > 0)
+				swapStr(names[k], names[k + 1]);
+
+	// display names
+	for (k = 0; k < SIZE; k++)
+		printf("%s ", names[k]);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 7
+
+char *getname()
+{
+	char str[100];
+	char *pd;
+
+	printf("Enter a name: ");
+	scanf("%s", str);
+
+	pd = (char *)malloc(strlen(str));
+	if (pd == NULL) {
+		printf("can not allocate memory... \n");
+		exit(EXIT_FAILURE);
+	}
+
+	// pd = strcpy(pd, str);
+
+	return strcpy(pd, str);
+}
+
+
+int main()
+{
+	char *p[5];
+	int k;
+
+	for (k = 0; k < 5; k++)
+		p[k] = getname();
+
+	for (k = 0; k < 5; k++)
+		my_puts(p[k]);
+
+
+	for (k = 0; k < 5; k++)
+		free(p[k]);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 30, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "utility.h"
+
+#define SIZE 7
+
+char *strcon(const char *p1, const char *p2)
+{
+	char *pd;
+
+	pd = (char *)malloc(strlen(p1) + strlen(p2));
+	if (pd == NULL) {
+		printf("can not allocate memory... \n");
+		exit(EXIT_FAILURE);
+	}
+
+	pd = strcat(strcpy(pd, p1), p2);
+
+	return pd;
+}
+
+int main()
+{
+	char s1[100];
+	char s2[100];
+	char *pd;
+
+	printf("Enter two words: ");
+	scanf("%s%s", s1, s2);
+
+	pd = strcon(s1, s2); // using malloc
+
+	my_puts(pd);
+	// strrev(pd);
+	gReverse(pd, strlen(pd), sizeof(char));
+	my_puts(pd);
+
+	free(pd);
+
+	return 0;
+}
+
+// OUTPUT
+Enter two words: nese gunes
+nesegunes
+senugesen
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////

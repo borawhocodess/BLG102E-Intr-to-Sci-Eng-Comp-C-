@@ -1,0 +1,66 @@
+- init:
+    run: rm -f sizedstr.o sizedstr
+    visible: false
+    blocker: true
+
+- build:
+    run: gcc -std=c99 -Wall -Werror alp2.c -o sizedstr
+    blocker: true
+
+- case_print:
+    run: ./sizedstr p hello
+    script:
+        - expect: "^hello\r\n$"
+        - expect: _EOF_
+
+- case_length:
+    run: ./sizedstr l hello
+    script:
+        - expect: "^5\r\n$"
+        - expect: _EOF_
+
+- case_concat:
+    run: ./sizedstr c dennis ritchie
+    script:
+        - expect: "^dennisritchie\r\n13\r\n$"
+        - expect: _EOF_
+
+- case_compare_less:
+    run: ./sizedstr o dennis ritchie
+    script:
+        - expect: "^-1\r\n$"
+        - expect: _EOF_
+
+- case_compare_greater:
+    run: ./sizedstr o ritchie dennis
+    script:
+        - expect: "^1\r\n$"
+        - expect: _EOF_
+
+- case_compare_equal:
+    run: ./sizedstr o dennis dennis
+    script:
+        - expect: "^0\r\n$"
+        - expect: _EOF_
+
+- case_compare_less_shorter:
+    run: ./sizedstr o dennis dennisritchie
+    script:
+        - expect: "^-1\r\n$"
+        - expect: _EOF_
+
+- case_compare_greater_longer:
+    run: ./sizedstr o dennisritchie dennis
+    script:
+        - expect: "^1\r\n$"
+        - expect: _EOF_
+
+# - case_delete:
+#     run: valgrind ./sizedstr p hello
+#     script:
+#         - expect: "no leaks are possible"
+#         - expect: _EOF_
+
+- cleanup:
+    run: rm -f sizedstr.o sizedstr
+    visible: false

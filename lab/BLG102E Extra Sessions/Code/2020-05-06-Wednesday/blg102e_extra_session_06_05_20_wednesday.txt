@@ -1,0 +1,256 @@
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * array_of_chars.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+
+int main()
+{
+	char word[] = {'D', 'a', 'r', 'l', 'i', 'n', 'g', '!', '\0'};
+	int i; // loop variable is defined in here so we don't need to compile with -std=c99
+
+	for (i = 0; i < 9; i++) {
+		printf("%c", word[i]);
+	}
+
+	printf("\n");
+
+	printf("%s", &word[0]);
+	// printf("%s", word);
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * reverse_array.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+
+int main()
+{
+	char word[15];
+	char *ptr;
+
+	printf("Enter a word: ");
+	scanf("%s", &word[0]);
+	// scanf("%s", word);
+
+	for (ptr = &word[0]; *ptr != '\0'; ptr++) {
+		printf("%c", *ptr);
+	}
+
+	printf("\n");
+
+	while (ptr-- != word) {
+		printf("%c", *ptr);
+	}
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * convert_upper_case.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+	char str[20];
+	char *ptr;
+
+	printf("Enter a sentence: ");
+	fgets(str, 20, stdin);
+
+	ptr = str;
+
+	printf("Entered sentence is: %s \n", ptr);
+
+	printf("Upper case format: ");
+
+	while (*ptr != '\0') {
+		if ((*ptr >= 'a') && (*ptr <= 'z'))
+			printf("%c", *ptr - 1);
+		else
+			printf("%c", *ptr);
+
+		ptr++;
+	}
+
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * convert_upper_case.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+	char str[20];
+	char *ptr;
+	int diff = 'a' - 'A';
+
+	printf("Enter a sentence: ");
+	fgets(str, 20, stdin);
+
+	ptr = str;
+
+	printf("Entered sentence is: %s \n", ptr);
+
+	printf("Upper case format: ");
+
+	while (*ptr != '\0') {
+		if ((*ptr >= 'a') && (*ptr <= 'z'))
+			printf("%c", *ptr - diff);
+		else
+			printf("%c", *ptr);
+
+		ptr++;
+	}
+
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// toupper() is just working fine!
+/*
+ * convert_upper_case.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+	char str[20];
+	char *ptr;
+	int diff = 'a' - 'A';
+
+	printf("Enter a sentence: ");
+	fgets(str, 20, stdin);
+
+	ptr = str;
+
+	printf("Entered sentence is: %s \n", ptr);
+
+	printf("Upper case format: ");
+
+	while (*ptr != '\0') {
+		if ((*ptr >= 'a') && (*ptr <= 'z'))
+			printf("%c", *ptr - diff);
+		else
+			printf("%c", *ptr);
+
+		ptr++;
+	}
+
+	ptr = str;
+	while (*ptr != '\0') {
+			if ((*ptr >= 'a') && (*ptr <= 'z'))
+				printf("%c", toupper(*ptr));
+			else
+				printf("%c", *ptr);
+
+			ptr++;
+		}
+
+	return 0;
+}
+
+// OUTPUT
+//Enter a sentence: nese gunes
+//Entered sentence is: nese gunes
+//
+//Upper case format: NESE GUNES
+//NESE GUNES
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * separate_sentence_into_words.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+
+int main()
+{
+	char *ptr_sentence = "What a beautiful day!";
+	char *ptr;
+	int i = 1;
+
+	printf("Sentence is: %s \n", ptr_sentence);
+
+	printf("\n%d. word is: ", i++);
+	for (ptr = ptr_sentence; *ptr != '\0';) {
+		if (*ptr == ' ')
+			printf("\n%d. word is: ", i++);
+		else
+			printf("%c", *ptr);
+		ptr++;
+	}
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/*
+ * my_strcpy.c
+ *
+ *  Created on: May 6, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str[20], copy_str[20];
+
+	printf("Enter a sentence: ");
+	fgets(str, 20, stdin);
+
+	printf("Entered sentence is: %s \n", str);
+	printf("Length is: %d \n", strlen(str));
+
+	strcpy(copy_str, str);
+	printf("Copy of the sentence is: %s \n", &copy_str[0]);
+
+	return 0;
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+
+
+

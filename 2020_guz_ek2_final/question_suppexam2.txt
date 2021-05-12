@@ -1,0 +1,70 @@
+Your program has to perform several operations on an undirected graph.
+The graph is given as a two dimensional array (adjacency matrix).
+For example, consider the following graph:
+
+A -- C -- B  E
+|    |
+D ___|
+
+Its adjacency matrix is:
+
+    A B C D E
+
+A   0 0 1 1 0
+B   0 0 1 0 0
+C   1 1 0 1 0
+D   1 0 1 0 0
+E   0 0 0 0 0
+
+You can assume that nodes are always labeled
+using consecutive uppercase letters starting from 'A'.
+
+The user can try two main commands: "u" or "d". "x" terminates the program.
+
+The command "u" indicates updating a node's edges
+and printing the new adjacency matrix.
+For example E01000 means E is updated in the graph with an edge to the node B.
+The updated graph looks like this:
+
+A -- C -- B -- E
+|    |
+D ___|
+
+And the resulting matrix will be
+(note how both E-B and B-E are set to 1):
+
+    A B C D E
+
+A   0 0 1 1 0
+B   0 0 1 0 1
+C   1 1 0 1 0
+D   1 0 1 0 0
+E   0 1 0 0 0
+
+The command "d" indicates calculating the degree centrality of the nodes
+and listing the most popular (highest centrality) node(s).
+
+Degree centrality (dc) of a node n1 in a graph is calculated as follows:
+
+dc(n1) = e1 / (n-1)
+
+where e1 is the number of edges of the node n1,
+and n is the total number of nodes in the graph.
+
+For the nodes in the example,
+
+degree centrality of A: 2 / 4
+................. of B: 2 / 4
+................. of C: 3 / 4
+................. of D: 2 / 4
+................. of E: 1 / 4
+
+So the output of the command "d" should be
+"Popular nodes with the highest degree 0.75 are: C".
+If there are two or more nodes with the highest degree centrality,
+then all of them should be listed (separated by spaces):
+"Popular nodes with the highest degree 0.75 are: A C".
+
+
+The source code provided with the question has a complete main program, and four functions. 
+Do not change the main program. Complete the functions only in the given order. 

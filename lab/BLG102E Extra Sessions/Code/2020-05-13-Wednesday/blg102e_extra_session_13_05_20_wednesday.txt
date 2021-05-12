@@ -1,0 +1,379 @@
+/*
+ * atoi.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+	int val;
+	char str[20];
+
+	strcpy(str, "9325");
+	val = atoi(str);
+	printf("String value: %s, Int value: %d \n", str, val);
+
+	strcpy(str, "itu.edu.tr");
+	val = atoi(str);
+	printf("String value: %s, Int value: %d \n", str, val);
+
+	strcpy(str, "23itu36.edu94.tr16");
+	val = atoi(str);
+	printf("String value: %s, Int value: %d \n", str, val);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+
+void swap(int a, int b)
+{
+	int temp = a;
+	a = b;
+	b = temp;
+
+	printf("Inside swap() \n");
+	printf("x = %d \n", a);
+	printf("y = %d \n", b);
+	printf("End of swap() \n");
+}
+
+int main()
+{
+	int x = 1;
+	int y = 100;
+
+	swap(x, y);
+
+	printf("Inside main() \n");
+	printf("x = %d \n", x);
+	printf("y = %d \n", y);
+	printf("End of main() \n");
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include "utility.h"
+
+int main()
+{
+	int x = 1;
+	int y = 100;
+
+	swap(&x, &y);
+
+	printf("Inside main() \n");
+	printf("x = %d \n", x);
+	printf("y = %d \n", y);
+	printf("End of main() \n");
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "utility.h"
+
+#define SIZE 20
+
+
+void randomize()
+{
+	srand(time(NULL));
+}
+
+void setArray(int *p, int size)
+{
+	int k;
+
+	for (k = 0; k < size; k++)
+		p[k] = rand() % 1000;
+}
+
+int main()
+{
+	int a[SIZE];
+
+	randomize();
+	setArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "utility.h"
+
+#define SIZE 100
+
+int main()
+{
+	int a[SIZE];
+
+	randomize();
+	setArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	printf("Sum: %d \n", sumArray(a, SIZE));
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include "utility.h"
+
+#define SIZE 100
+
+int main()
+{
+	int a[SIZE];
+
+	randomize();
+	setArray(a, SIZE);
+
+	displayArray(a, SIZE);
+	displayArray(&a[0], SIZE);
+
+	displayArray(a, 5);
+	displayArray(a + 3, 4);
+	displayArray(a + SIZE - 5, 5);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include "utility.h"
+
+#define SIZE 10
+
+int *getMinArray(int *p, int size)
+{
+	int *pmin = p;
+	int k;
+
+	for (k = 0; k < size; k++)
+		if (p[k] < *pmin)
+			pmin = &p[k];
+
+	return pmin;
+}
+
+int *getMaxArray(int *p, int size)
+{
+	int *pmax = p;
+	int k;
+
+	for (k = 0; k < size; k++)
+		if (p[k] > *pmax)
+			pmax = &p[k];
+
+	return pmax;
+}
+
+int getMin(int *p, int size)
+{
+	int min = p[0];
+	int k;
+
+	for (k = 1; k < size; k++)
+		if (p[k] < min)
+			min = p[k];
+
+	return min;
+}
+
+int getMax(int *p, int size)
+{
+	int max = p[0];
+	int k;
+
+	for (k = 1; k < size; k++)
+		if (p[k] > max)
+			max = p[k];
+
+	return max;
+}
+
+int main()
+{
+	int a[SIZE];
+
+	randomize();
+	setArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	printf("Min: %d \n", *getMinArray(a, SIZE));
+	printf("Max: %d \n", *getMaxArray(a, SIZE));
+
+	printf("Min: %d \n", getMin(a, SIZE));
+	printf("Max: %d \n", getMax(a, SIZE));
+
+	// int val;
+	// int *ptr_val;
+	// (int *) (*ptr_func)(int *, int);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include "utility.h"
+
+#define SIZE 10
+
+int main()
+{
+	int a[SIZE] = {0};
+
+	displayArray(a, SIZE);
+
+	printf("&a[6] - &a[2] = %d \n", &a[6] - &a[2]);
+	printf("&a[3] - &a[5] = %d \n", &a[3] - &a[5]);
+
+	printf("&a[6] - &a[2] = %d \n", (a + 6) - (a + 2));
+	printf("&a[3] - &a[5] = %d \n", (a + 3) - (a + 5));
+  
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include "utility.h"
+
+#define SIZE 10
+
+int g = 99;
+
+int *func()
+{
+	return &g;
+}
+
+int main()
+{
+	printf("g =  %d \n", g);
+
+	++*func();
+
+	printf("g =  %d \n", g);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 13, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include "utility.h"
+
+#define SIZE 10
+
+int a[10] = {0};
+
+int *func()
+{
+	return a;
+}
+
+int main()
+{
+	++func()[3];
+
+	printf("a[3] =  %d \n", a[3]);
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////

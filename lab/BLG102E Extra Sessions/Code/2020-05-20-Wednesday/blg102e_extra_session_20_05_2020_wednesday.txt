@@ -1,0 +1,747 @@
+// 20.05.2020 Wednesday
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 10
+
+int *searchVal(const int *ptr, int size, int sval)
+{
+	while (size--) {
+		if (*ptr == sval)
+			return (int *) ptr;
+		ptr++;
+	}
+
+	// NULL pointer
+	return MY_NULL_POINTER; //  null character: '\0'
+}
+
+
+int main()
+{
+	int a[SIZE];
+	int *p;
+	int val;
+
+	randomize();
+	setRandomArray(a, SIZE);
+	displayArray(a, SIZE);
+
+	printf("Aranacak degeri girin: ");
+	scanf("%d", &val);
+
+	p = searchVal(a, SIZE, val);
+
+	if (p == NULL)
+		printf("aradigin deger burada yok! \n");
+	else
+		printf("bulundu... (%d) \n", *p);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 10
+
+char *my_gets_2(char *p)
+{
+	int ch;
+	char *ptemp = p;
+
+	while ((ch = getchar()) != '\n') {
+		*p++ = ch;
+	}
+
+	*p = '\0'; // nese gunes 2020'\0'
+
+	return ptemp;
+}
+
+int main()
+{
+	char str[SIZE];
+
+	printf("Enter a sentence: ");
+	my_gets_2(str);
+
+	puts(str);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 10
+
+void my_puts(const char *p)
+{
+	int k;
+
+	for (k = 0; p[k] != '\0'; k++)
+		printf("%c", p[k]);
+
+	printf("\n");
+}
+
+int main()
+{
+	char str[SIZE];
+
+	printf("Enter a sentence: ");
+	my_gets(str);
+
+	my_puts(str);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+int main()
+{
+	char str[SIZE] = "C and System Programming Association: CSD.org";
+	int k;
+	int len = strlen(str);
+
+	for (k = 0; k < len; k++)
+		my_puts(str + k);
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+void rputs(const char *p)
+{
+	int len = strlen(p);
+	int k;
+
+	for (k = len - 1; k >= 0; k--)
+		printf("%c ", p[k]);
+
+	printf("\n");
+}
+
+int main()
+{
+	char str[SIZE] = "necati";
+
+	rputs(str);
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+char *strchr1(const char *p, int ch)
+{
+	int k;
+
+	for (k = 0; p[k] != '\0'; k++)
+		if (p[k] == ch)
+			return (p + k);
+
+	return MY_NULL_POINTER;
+}
+
+int main()
+{
+	char str[SIZE];
+	int ch;
+	char *p;
+
+	printf("Enter a sentence: ");
+	my_gets(str);
+
+	printf("Enter the character to search: ");
+	ch = getchar();
+
+	p = strchr1(str, ch);
+
+	if (p == NULL) // if (!p)
+		printf("NOT found... \n");
+	else
+		printf("Found. (%s) \n", p);
+
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+
+char *strchr2(const char *p, int ch)
+{
+	while (*p != '\0') {
+		if (*p == ch)
+			return p;
+		p++;
+	}
+
+	if (ch == '\0')
+		return p;
+
+	return MY_NULL_POINTER;
+}
+
+int main()
+{
+	char str[SIZE];
+	int ch;
+	char *p;
+
+	printf("Enter a sentence: ");
+	my_gets(str);
+
+	printf("Enter the character to search: ");
+	ch = getchar();
+
+	p = strchr2(str, ch);
+
+	if (p == NULL) // if (!p)
+		printf("NOT found... \n");
+	else
+		printf("Found. (%s) \n", p);
+
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+
+
+
+int main()
+{
+	char s1[SIZE];
+	char s2[SIZE];
+	int cmpResult;
+
+	printf("Enter two names: ");
+	scanf("%s%s", s1, s2);
+
+	cmpResult = strcmp(s1, s2);
+
+	if (cmpResult > 0)
+		printf("(%s) > (%s) \n", s1, s2);
+	else if (cmpResult < 0)
+		printf("(%s) < (%s) \n", s1, s2);
+	else if (cmpResult == 0)
+		printf("(%s) = (%s) \n", s1, s2);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+int strcmp1(const char *p1, const char *p2)
+{
+	while (*p1 == *p2) {
+		if (*p1 == '\0')
+			return 0;
+		p1++;
+		p2++;
+	}
+
+	return *p1 - *p2; // 'n' - 'g' ---> 110 - 101 = 9
+}
+
+int main()
+{
+	char s1[SIZE];
+	char s2[SIZE];
+	int cmpResult;
+
+	printf("Enter two names: ");
+	scanf("%s%s", s1, s2);
+
+	cmpResult = strcmp1(s1, s2);
+
+	if (cmpResult > 0)
+		printf("(%s) > (%s) \n", s1, s2);
+	else if (cmpResult < 0)
+		printf("(%s) < (%s) \n", s1, s2);
+	else if (cmpResult == 0)
+		printf("(%s) = (%s) \n", s1, s2);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+char *strpbrk1(const char *p, const char *pcon)
+{
+	int k;
+
+	for (k = 0; p[k] != '\0'; k++)
+		if (strchr1(pcon, p[k]))
+			return (char *) (p + k);
+
+	return NULL;
+}
+
+int main()
+{
+	char str[SIZE];
+	char scon[SIZE] = "necati";
+	char *ptr;
+
+
+	printf("Enter a sentence: ");
+	my_gets(str);
+
+	// string pointer break
+	ptr = strpbrk1(str, scon);
+
+	if (ptr == NULL)
+		printf("In (%s), there is not any of the letters of the (%s) \n", str, scon);
+	else
+		printf("found (%c) (%s) \n", *ptr, str);
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+int isAtEnd(const char *p1, const char *p2)
+{
+	size_t len1 = strlen(p1);
+	size_t len2 = strlen(p2);
+
+	// murat       s2: at
+	if (len2 > len1)
+		return 0;
+
+	return !strcmp1(p1 + len1 - len2, p2);
+}
+
+int main()
+{
+	char s1[SIZE];
+	char s2[SIZE];
+
+	printf("Enter a sentence: ");
+	my_gets(s1);
+
+	printf("Enter a second sentence: ");
+	my_gets(s2);
+
+	if (isAtEnd(s1, s2))
+		printf("At the end of (%s), there is (%s). \n", s1, s2);
+	else
+		printf("At the end of (%s), there is NOT (%s). \n", s1, s2);
+
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+int main()
+{
+	printf("%c \n", *"ANKARA");
+	printf("%c \n", *("AKHISAR" + 2));
+	printf("%c \n", "nesegunes"[5]);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+int main()
+{
+	char *pmons[3] = {"Jan", "Feb", "March"};
+	char entry[40];
+	int k;
+
+	printf("Enter the month: ");
+	scanf("%s", entry);
+
+	for (k = 0; k < 3; k++)
+		if (!strcmp1(pmons[k], entry))
+			break;
+
+	if (k == 3)
+		printf("%s is not a valid month.. \n", entry);
+	else
+		printf("%s is the %d. month of the year. \n", entry, k + 1);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 100
+
+
+int main()
+{
+	char *pnames[] = {
+			"yarisan17",
+			"denizm17",
+			"kapucut18",
+			"yurdakul17",
+			"allahverdi",
+			"okumus15",
+			"akyildizer16",
+			"orneke16"
+	};
+
+	int size = sizeof(pnames) / sizeof(pnames[0]);
+	int k;
+
+	printf("The size of the array is: %d \n", size);
+
+	for (k = 0; k < size; k++)
+		printf("%c ", pnames[k][strlen(pnames[k]) - 1]);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 8
+
+
+void sswap(char **p1, char **p2)
+{
+	char *ptemp = *p1;
+	*p1 = *p2;
+	*p2 = ptemp;
+}
+
+void sortNames(char **p, int size)
+{
+	int i, k;
+
+	for (i = 0; i < size - 1; i++)
+		for (k = 0; k < size - 1 - i; k++)
+			if (strcmp1(p[k], p[k + 1]) > 0)
+				sswap(p + k, p + k + 1);
+}
+
+int main()
+{
+	char *pnames[SIZE] = {
+			"yarisan17",
+			"denizm17",
+			"kapucut18",
+			"yurdakul17",
+			"allahverdi",
+			"okumus15",
+			"akyildizer16",
+			"orneke16"
+	};
+
+	displayNames(pnames, SIZE);
+	sortNames(pnames, SIZE);
+	displayNames(pnames, SIZE);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 8
+
+void gswap(void *vp1, void *vp2, size_t n)
+{
+	char *p1 = vp1;
+	char *p2 = vp2;
+
+	while (n--) {
+		char temp = *p1;
+		*p1++ = *p2;
+		*p2++ = temp;
+	}
+}
+
+int main()
+{
+	int x = 45, y = 90;
+	double d1 = 234.34, d2 = 762.35;
+	int a[10], b[10];
+
+	randomize();
+	setRandomArray(a, 10);
+	displayArray(a, 10);
+
+	setRandomArray(b, 10);
+	displayArray(b, 10);
+
+	printf("************************");
+
+	gswap(&x, &y, sizeof(int));
+	gswap(&d1, &d2, sizeof(double));
+	gswap(a, b, sizeof(a));
+
+	printf("x = %d \n", x);
+	printf("y = %d \n", y);
+
+	printf("d1 = %lf \n", d1);
+	printf("d2 = %lf \n", d2);
+
+	displayArray(a, 10);
+	displayArray(b, 10);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/*
+ * main.c
+ *
+ *  Created on: May 20, 2020
+ *      Author: tardis
+ */
+#include <stdio.h>
+#include <string.h>
+#include "utility.h"
+
+#define EXIT_SUCCESS 0
+#define MY_NULL_POINTER ((void *) 0)
+#define SIZE 8
+
+int main()
+{
+	char *pnames[SIZE] = {
+				"yarisan17",
+				"denizm17",
+				"kapucut18",
+				"yurdakul17",
+				"allahverdi",
+				"okumus15",
+				"akyildizer16",
+				"orneke16"
+	};
+
+	printf("*pnames: %s ", *pnames);
+	printf("**pnames: %c ", **pnames);
+
+	return EXIT_SUCCESS;
+}
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
